@@ -1,0 +1,24 @@
+version: '3'
+
+services:  
+  web:
+    build:
+      context: .
+      dockerfile: docker/dockerfiles/python.dockerfile
+      args:
+        - USER_ID=1000
+        - GROUP_ID=1000
+    command: "uvicorn blog.main:app --host 0.0.0.0 --port 8000 --reload"
+    volumes:
+      - .:/home/fastapi/code
+    ports:
+      - "8000:8000"
+
+  pants:
+    build:
+      context: .
+      dockerfile: docker/dockerfiles/pants.dockerfile      
+    volumes:
+      - .:/home/fastapi/code
+      - ./.pants_cache:/root/.cache/pants
+    entrypoint: ['./pants']

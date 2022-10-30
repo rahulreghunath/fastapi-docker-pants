@@ -1,0 +1,28 @@
+[GLOBAL]
+use_deprecated_directory_cli_args_semantics = true
+pants_version = "2.14.0"
+backend_packages = [
+    "pants.backend.python",
+    "pants.backend.python.lint.docformatter",
+    "pants.backend.python.lint.pylint",
+    "pants.backend.python.typecheck.mypy",
+    "pants.backend.python.lint.black"
+]
+[anonymous-telemetry]
+enabled = false
+[python]
+# This will become the default in Pants 2.15.
+tailor_pex_binary_targets = false
+[source]
+root_patterns = ["/"]
+[pytest]
+lockfile = "lockfiles/pytest.lock"
+extra_requirements.add = [
+  "schema",
+  "fastapi",
+  "requests",
+  "sqlalchemy",
+  "python-jose",
+  "passlib",
+  "python-multipart"
+]
