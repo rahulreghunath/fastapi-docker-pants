@@ -2,7 +2,6 @@ venv
 *.db
 *.pyc
 tortoise_app
-*.txt
 redis
 # Pants workspace files
 /.pants.*
