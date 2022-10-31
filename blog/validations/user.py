@@ -20,7 +20,9 @@ def check_if_exist(request: schemas.User, db_session: Session):
     Raises:
         RequestValidationError: _description_
     """
-    user = db_session.query(models.User).filter(models.User.email == request.email).first()
+    user = (
+        db_session.query(models.User).filter(models.User.email == request.email).first()
+    )
     if user:
         raise RequestValidationError(
             [ErrorWrapper(ValueError(EMAIL_EXIST), ("body", "email"))]

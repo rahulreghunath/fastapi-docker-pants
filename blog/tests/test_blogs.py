@@ -12,11 +12,11 @@ blog = {"title": str, "body": str, "creator": {"name": str, "email": str}}
 blogs_schema = Schema([blog])
 blog_schema = Schema(blog)
 
-access_token = create_access_token(
+ACCESS_TOKEN = create_access_token(
     data={"user": "rahulreghunath11@gmail.com", "scopes": ["blogs"]}
 )
 
-headers = {"Authorization": f"Bearer {access_token}"}
+headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 
 
 @pytest.mark.parametrize(

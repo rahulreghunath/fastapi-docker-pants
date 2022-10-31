@@ -57,7 +57,8 @@ def new_blog(
     Args:
         request (schemas.BlogCreate): _description_
         db (Session, optional): _description_. Defaults to Depends(get_db).
-        user (schemas.TokenData, optional): _description_. Defaults to Security(get_current_user, scopes=["blogs"]).
+        user (schemas.TokenData, optional): _description_. Defaults
+            to Security(get_current_user, scopes=["blogs"]).
 
     Returns:
         _type_: _description_
@@ -160,4 +161,14 @@ def partial_update_blog(
     db: Session = Depends(get_db),
     # user: schemas.TokenData = Depends(get_current_user),
 ):
+    """_summary_
+
+    Args:
+        blog_id (int): _description_
+        request (schemas.BlogUpdate): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+
+    Returns:
+        _type_: _description_
+    """
     return blog.partial_update(blog_id, request, db)

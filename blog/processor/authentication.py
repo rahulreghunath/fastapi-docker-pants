@@ -15,7 +15,7 @@ from blog.token import create_access_token
 from shared.utils import Hash
 
 
-def authenfication(request: OAuth2PasswordRequestForm, db: Session ):
+def authenfication(request: OAuth2PasswordRequestForm, db: Session):
     """_summary_
 
     Args:

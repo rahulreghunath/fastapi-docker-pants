@@ -4,7 +4,6 @@ from typing import List, Union
 from pydantic import BaseModel, Field, constr
 
 
-
 class HTTPError(BaseModel):
     """_summary_
 
@@ -14,14 +13,12 @@ class HTTPError(BaseModel):
 
     detail: str
 
-    
     class Config:
         """_summary_"""
 
         schema_extra = {
             "example": {"detail": "HTTPException raised."},
         }
-
 
 
 class HTTPSuccess(BaseModel):
@@ -33,14 +30,12 @@ class HTTPSuccess(BaseModel):
 
     detail: str
 
-    
     class Config:
         """_summary_"""
 
         schema_extra = {
             "example": {"detail": "Response message"},
         }
-
 
 
 class BlogBase(BaseModel):
@@ -54,7 +49,6 @@ class BlogBase(BaseModel):
     body: Union[str, None] = None
 
 
-
 class Blog(BlogBase):
     """_summary_
 
@@ -65,12 +59,10 @@ class Blog(BlogBase):
     title: Union[str, None] = None
     body: Union[str, None] = None
 
-    
     class Config:
         """_summary_"""
 
         orm_mode = True
-
 
 
 class BlogCreate(Blog):
@@ -90,7 +82,6 @@ class BlogCreate(Blog):
     )
 
 
-
 class BlogUpdate(BaseModel):
     """_summary_
 
@@ -100,7 +91,6 @@ class BlogUpdate(BaseModel):
 
     title: Union[str, None] = None
     body: Union[str, None] = None
-
 
 
 class BaseUser(BaseModel):
@@ -114,7 +104,6 @@ class BaseUser(BaseModel):
     email: str
 
 
-
 class ResponseUser(BaseUser):
     """_summary_
 
@@ -122,12 +111,10 @@ class ResponseUser(BaseUser):
         BaseUser (_type_): _description_
     """
 
-    
     class Config:
         """_summary_"""
 
         orm_mode = True
-
 
 
 class User(BaseUser):
@@ -140,7 +127,6 @@ class User(BaseUser):
     password: str
 
 
-
 class ShowUser(BaseUser):
     """_summary_
 
@@ -150,12 +136,10 @@ class ShowUser(BaseUser):
 
     blogs: List[Blog]
 
-    
     class Config:
         """_summary_"""
 
         orm_mode = True
-
 
 
 class ShowBlog(Blog):
@@ -167,12 +151,10 @@ class ShowBlog(Blog):
 
     creator: ResponseUser = {}
 
-    
     class Config:
         """_summary_"""
 
         orm_mode = True
-
 
 
 class Login(BaseModel):
@@ -185,6 +167,7 @@ class Login(BaseModel):
     username: str
     password: str
 
+
 class Token(BaseModel):
     """_summary_
 
@@ -194,7 +177,6 @@ class Token(BaseModel):
 
     access_token: str
     token_type: str
-
 
 
 class TokenData(BaseModel):

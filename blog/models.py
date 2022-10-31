@@ -6,7 +6,6 @@ from sqlalchemy.orm import relationship
 from .database.database import Base
 
 
-
 class Blog(Base):
     """_summary_
 

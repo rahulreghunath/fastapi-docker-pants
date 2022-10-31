@@ -30,6 +30,16 @@ def get_all(db: Session):
 
 
 def create(request: schemas.BlogCreate, db: Session, user: schemas.TokenData):
+    """_summary_
+
+    Args:
+        request (schemas.BlogCreate): _description_
+        db (Session): _description_
+        user (schemas.TokenData): _description_
+
+    Returns:
+        _type_: _description_
+    """
     new_blog = models.Blog(title=request.title, body=request.blog_body, user_id=user.id)
     db.add(new_blog)
     db.commit()
