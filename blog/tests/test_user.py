@@ -1,13 +1,12 @@
 """_summary_"""
 import uuid
+
 import pytest
 from schema import Schema
 from starlette.testclient import TestClient
+
 from blog.main import app
-
-
-from blog.token import create_access_token
-
+from blog.jwk_token import create_access_token
 
 client = TestClient(app)
 

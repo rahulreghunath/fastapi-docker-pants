@@ -7,9 +7,9 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from blog import schemas
+from blog.database.database import get_db
 from blog.processor import user
 from blog.response_schemas import RESPONSE_404, RESPONSE_OK
-from blog.database.database import get_db
 from blog.validations.user import check_if_exist
 
 router = APIRouter(prefix="/users", tags=["users"])

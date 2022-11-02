@@ -1,7 +1,8 @@
 """_summary_"""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import blog, user, authentication
+
+from .routers import authentication, blog, user
 
 app = FastAPI()
 

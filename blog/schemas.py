@@ -1,6 +1,7 @@
 """_summary_"""
 
 from typing import List, Union
+
 from pydantic import BaseModel, Field, constr
 
 
@@ -186,5 +187,5 @@ class TokenData(BaseModel):
         BaseModel (_type_): _description_
     """
 
-    id: int = None
+    id: Union[int, None] = None
     scopes: List[str] = []

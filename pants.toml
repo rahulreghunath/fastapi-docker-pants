@@ -11,8 +11,12 @@ backend_packages = [
 [anonymous-telemetry]
 enabled = false
 [python]
-# This will become the default in Pants 2.15.
+interpreter_constraints = ["==3.9.*"]
+enable_resolves = true
+resolves = { python-default = "python-default.lock"}
 tailor_pex_binary_targets = false
+[python-bootstrap]
+search_path = ["<PATH>", "<PYENV>"]
 [source]
 root_patterns = ["/"]
 [pytest]
@@ -24,5 +28,5 @@ extra_requirements.add = [
   "sqlalchemy",
   "python-jose",
   "passlib",
-  "python-multipart"
+  "python-multipart",
 ]

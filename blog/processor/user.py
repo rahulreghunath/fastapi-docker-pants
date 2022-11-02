@@ -7,7 +7,6 @@ Returns:
     _type_: _description_
 """
 from fastapi import HTTPException, status
-
 from sqlalchemy.orm import Session
 
 from blog import models, schemas

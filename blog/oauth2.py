@@ -6,8 +6,9 @@ Returns:
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, SecurityScopes
 from sqlalchemy.orm import Session
+
 from blog.database.database import get_db
-from blog.token import verify_token
+from blog.jwk_token import verify_token
 
 scopes = {
     "blogs": "Manage Blogs",

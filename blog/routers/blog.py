@@ -4,16 +4,15 @@ Returns:
     _type_: _description_
 """
 from typing import List
-from fastapi import APIRouter, Depends, status
-from fastapi import Security
+
+from fastapi import APIRouter, Depends, Security, status
 from sqlalchemy.orm import Session
 
-
 from blog import schemas
-from blog.oauth2 import get_current_user
-from blog.response_schemas import RESPONSE_404, RESPONSE_OK
-from blog.processor import blog
 from blog.database.database import get_db
+from blog.oauth2 import get_current_user
+from blog.processor import blog
+from blog.response_schemas import RESPONSE_404, RESPONSE_OK
 
 router = APIRouter(prefix="/blogs", tags=["blogs"])
 

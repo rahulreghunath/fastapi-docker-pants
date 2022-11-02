@@ -9,9 +9,10 @@ Returns:
     _type_: _description_
 """
 from datetime import datetime, timedelta
+
 from fastapi import HTTPException, status
 from fastapi.security import SecurityScopes
-from jose import jwt, JWTError
+from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 
 from blog import models

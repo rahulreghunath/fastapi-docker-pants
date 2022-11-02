@@ -10,8 +10,9 @@ Returns:
 from fastapi import HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
+
 from blog import models
-from blog.token import create_access_token
+from blog.jwk_token import create_access_token
 from shared.utils import Hash
 
 

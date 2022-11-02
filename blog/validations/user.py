@@ -3,9 +3,10 @@
 Raises:
     RequestValidationError: _description_
 """
-from sqlalchemy.orm import Session
 from fastapi.exceptions import RequestValidationError
 from pydantic.error_wrappers import ErrorWrapper
+from sqlalchemy.orm import Session
+
 from blog import models, schemas
 from blog.constants.messages import EMAIL_EXIST
 
