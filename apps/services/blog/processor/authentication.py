@@ -11,9 +11,9 @@ from fastapi import HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
-from blog import models
-from blog.jwk_token import create_access_token
-from shared.utils import Hash
+from apps.services.blog import models
+from apps.services.blog.jwk_token import create_access_token
+from apps.shared.utils import Hash
 
 
 def authenfication(request: OAuth2PasswordRequestForm, db: Session):

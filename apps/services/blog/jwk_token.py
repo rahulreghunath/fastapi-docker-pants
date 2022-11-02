@@ -15,9 +15,9 @@ from fastapi.security import SecurityScopes
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 
-from blog import models
-from blog.constants.messages import UNAUTHORIZED_REQUEST
-from blog.schemas import TokenData
+from apps.services.blog import models
+from apps.services.blog.constants.messages import UNAUTHORIZED_REQUEST
+from apps.services.blog.schemas import TokenData
 
 SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
 ALGORITHM = "HS256"

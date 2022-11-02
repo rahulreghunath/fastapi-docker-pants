@@ -21,4 +21,6 @@ services:
     volumes:
       - .:/home/fastapi/code
       - ./.pants_cache:/root/.cache/pants
+    ports:
+      - "8080:8000"
     entrypoint: ['./pants']

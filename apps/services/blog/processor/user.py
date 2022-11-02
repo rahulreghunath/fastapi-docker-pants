@@ -9,9 +9,9 @@ Returns:
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from blog import models, schemas
-from blog.constants.messages import USER_ADDED
-from shared.utils import Hash
+from apps.services.blog import models, schemas
+from apps.services.blog.constants.messages import USER_ADDED
+from apps.shared.utils import Hash
 
 
 def create(request: schemas.User, db: Session):

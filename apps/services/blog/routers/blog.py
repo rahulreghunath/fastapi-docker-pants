@@ -8,11 +8,11 @@ from typing import List
 from fastapi import APIRouter, Depends, Security, status
 from sqlalchemy.orm import Session
 
-from blog import schemas
-from blog.database.database import get_db
-from blog.oauth2 import get_current_user
-from blog.processor import blog
-from blog.response_schemas import RESPONSE_404, RESPONSE_OK
+from apps.services.blog import schemas
+from apps.services.blog.database.database import get_db
+from apps.services.blog.oauth2 import get_current_user
+from apps.services.blog.processor import blog
+from apps.services.blog.response_schemas import RESPONSE_404, RESPONSE_OK
 
 router = APIRouter(prefix="/blogs", tags=["blogs"])
 

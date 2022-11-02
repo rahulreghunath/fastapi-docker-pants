@@ -12,8 +12,8 @@ Returns:
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from blog import models, schemas
-from blog.constants.messages import BLOG_ADDED
+from apps.services.blog import models, schemas
+from apps.services.blog.constants.messages import BLOG_ADDED
 
 
 def get_all(db: Session):

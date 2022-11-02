@@ -1,10 +1,10 @@
-python_requirement(name="fastapi", requirements=["fastapi"])
-python_sources(
-    name="root",
-)
+python_requirements(name="requirements")
+# python_sources(
+#     name="root",
+# )
 
-pex_binary(
-  name="app",
-  entry_point="blog/run.py",
-  dependencies=["uvicorn","fastapi"],
-)
+# pex_binary(
+#   name="app",
+#   entry_point="blog/run.py",
+#   dependencies=["uvicorn","fastapi"],
+# )
